@@ -1,16 +1,24 @@
-class ResearchPaper:
-    def __init__(self, title, authors, year, venue):
+from base_entry import LibraryEntry
+
+
+class ResearchPaper(LibraryEntry):
+    def __init__(self, title, authors, year, venue, category="Uncategorized", pdf_name=None):
+        super().__init__(title, category)
         self.title = title
         self.authors = authors
         self.year = year
         self.venue = venue
+        self.pdf_name = pdf_name
         self.status = "Unread"
         self.notes = []
         self.tags = []
         self.rating = None
 
     def __str__(self):
-        return f"{self.title} ({self.year}) - {self.authors}"
+        return f"{self.title} ({self.year}) - {self.authors} [{self.category}]"
+
+    def display(self):
+        return str(self)
     
     def to_dict(self):
         return {
@@ -18,6 +26,8 @@ class ResearchPaper:
             "authors": self.authors,
             "year": self.year,
             "venue": self.venue,
+            "category": self.category,
+            "pdf_name": self.pdf_name,
             "status": self.status
         }
     
@@ -27,7 +37,9 @@ class ResearchPaper:
             data["title"],
             data["authors"],
             data["year"],
-            data["venue"]
+            data["venue"],
+            data.get("category", "Uncategorized"),
+            data.get("pdf_name")
         )
-        paper.status = data["status"]
+        paper.status = data.get("status", "Unread")
         return paper

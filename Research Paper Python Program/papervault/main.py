@@ -20,8 +20,12 @@ while True:
         authors = input("Authors: ")
         year = int(input("Year: "))
         venue = input("Venue: ")
+        category = input("Category: ")
+        # Optional PDF path lets the storage layer copy the file into the category folder.
+        source_path = input("PDF file path (optional): ").strip() or None
 
-        paper = ResearchPaper(title, authors, year, venue)
+        paper = ResearchPaper(title, authors, year, venue, category)
+        paper.source_path = source_path
 
         library.add_paper(paper)
 
@@ -53,9 +57,10 @@ while True:
     elif choice == "5":
         LibraryStorage.load_library(
             library,
-            "papers.json"
+            "papers.json",
+            open_files=True
         )
-        print("To master your blade, you must first control your emotions. Library loaded.")
+        print("Library loaded.")
 
     elif choice == "0":
         print("Goodbye!")
