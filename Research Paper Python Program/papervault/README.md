@@ -1,12 +1,12 @@
 # PaperVault
 
-## Instructions
+## Checklist
 
-1. Run `main.py`.
-2. Choose `1` to add a paper.
-3. Enter a category and an optional PDF file path.
-4. Choose `4` to save the library.
-5. Choose `5` to load the library and open the saved PDF if it exists.
+- [ ] Run `main.py`.
+- [ ] Choose `1` to add a paper.
+- [ ] Enter a category and an optional PDF file path.
+- [ ] Choose `4` to save the library.
+- [ ] Choose `5` to load the library and open the saved PDF if it exists.
 
 ## Notes
 
