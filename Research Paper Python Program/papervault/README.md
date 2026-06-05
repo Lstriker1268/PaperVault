@@ -2,11 +2,11 @@
 
 ## Checklist
 
-- [ ] Run `main.py`.
-- [ ] Choose `1` to add a paper.
-- [ ] Enter a category and an optional PDF file path.
-- [ ] Choose `4` to save the library.
-- [ ] Choose `5` to load the library and open the saved PDF if it exists.
+- [X] Run `main.py`.
+- [X] Choose `1` to add a paper.
+- [X] Enter a category and an optional PDF file path.
+- [X] Choose `4` to save the library.
+- [X] Choose `5` to load the library and open the saved PDF if it exists.
 
 ## Notes
 
