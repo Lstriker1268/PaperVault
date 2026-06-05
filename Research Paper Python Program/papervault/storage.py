@@ -7,11 +7,11 @@ class LibraryStorage:
     def save_library(library, filename):
         data = []
 
-    for paper in library.papers:
-        data.append(paper.to_dict())
+        for paper in library.papers:
+            data.append(paper.to_dict())
 
-    with open(filename, "w") as file:
-        json.dump(data, file, indent = 4)
+        with open(filename, "w") as file:
+            json.dump(data, file, indent=4)
 
     @staticmethod
     def load_library(library, filename):
