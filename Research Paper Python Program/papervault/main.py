@@ -20,8 +20,17 @@ while True:
         authors = input("Authors: ")
         year = int(input("Year: "))
         venue = input("Venue: ")
+        category = input("Category: ")
+        pdf_path = input("PDF path (optional): ")
 
-        paper = ResearchPaper(title, authors, year, venue)
+        paper = ResearchPaper(
+            title,
+            authors,
+            year,
+            venue,
+            category,
+            pdf_path
+        )
 
         library.add_paper(paper)
 
