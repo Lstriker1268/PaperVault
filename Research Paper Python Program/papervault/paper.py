@@ -5,8 +5,8 @@ class ResearchPaper:
         authors,
         year,
         venue,
-        category="General",
-        pdf_path=""
+        category = "General",
+        pdf_path = ""
     ):
         self.title = title
         self.authors = authors

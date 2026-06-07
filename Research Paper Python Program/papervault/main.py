@@ -64,6 +64,9 @@ while True:
             library,
             "papers.json"
         )
+        
+        print("Number of papers loaded:", len(library.papers))
+
         print("To master your blade, you must first control your emotions. Library loaded.")
 
     elif choice == "0":
