@@ -1,18 +1,45 @@
+import os
+import library
 import json
 from paper import ResearchPaper
 
 class LibraryStorage:
 
     @staticmethod
-    def save_library(library, filename):
-        data = []
+    def save_library(library):
+
+        categories = {}
 
         for paper in library.papers:
-            data.append(paper.to_dict())
 
-        with open(filename, "w") as file:
-            json.dump(data, file, indent=4)
+            if paper.category not in categories:
+                categories[paper.category] = []
 
+            categories[paper.category].append(
+                paper.to_dict()
+            )
+
+        for category, papers in categories.items():
+
+            folder_path = os.path.join(
+                "papers",
+                category
+            )
+
+            os.makedirs(folder_path, exist_ok=True)
+
+            file_path = os.path.join(
+                folder_path,
+                "papers.json"
+            )
+
+            with open(file_path, "w") as file:
+                json.dump(
+                    papers,
+                    file,
+                    indent=4
+                )
+                
     @staticmethod
     def load_library(library, filename):
         try:
