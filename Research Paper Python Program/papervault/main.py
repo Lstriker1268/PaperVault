@@ -53,10 +53,7 @@ while True:
             print("Uh oh! No papers found!")
 
     elif choice == "4":
-        LibraryStorage.save_library(
-            library,
-            "papers.json"
-        )
+        LibraryStorage.save_library(library)
         print("Everything has a beginning. Library saved.")
 
     elif choice == "5":
